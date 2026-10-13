@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Google</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HOME: looks like a normal Google homepage -->
+<section id="home" class="view active">
+  <div class="home-wrap">
+    <h1 class="logo big"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h1>
+    <form class="searchbox" autocomplete="off">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
+      <input type="text" aria-label="Search" spellcheck="false">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2z"/></svg>
+      <ul class="suggest"></ul>
+    </form>
+    <div class="btns">
+      <button class="gbtn go">Google Search</button>
+      <button class="gbtn lucky">I'm Feeling Lucky</button>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS: floral themed -->
+<section id="results" class="view">
+  <header class="rhead">
+    <h1 class="logo small" id="homeLink"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h1>
+    <form class="searchbox compact" autocomplete="off">
+      <input type="text" aria-label="Search" spellcheck="false">
+      <button type="button" class="clear" aria-label="Clear">&times;</button>
+      <span class="sep"></span>
+      <svg class="ico" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2z"/></svg>
+      <svg class="ico find" viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
+      <ul class="suggest"></ul>
+    </form>
+  </header>
+  <nav class="tabs" id="tabs">
+    <button data-tab="all" class="on">All</button>
+    <button data-tab="images">Images</button>
+    <button data-tab="videos">Videos</button>
+    <button data-tab="news">News</button>
+  </nav>
+  <main id="tabContent"></main>
+</section>
+
+<!-- BIRTHDAY SURPRISE -->
+<section id="birthday" class="view">
+  <div id="floaters"></div>
+  <button class="back" id="bdayBack">&larr; Back to results</button>
+  <div class="bday-inner">
+    <div class="hero">
+      <h2 id="bTitle"></h2>
+      <p id="bSub"></p>
+    </div>
+    <div class="cake-zone reveal">
+      <div class="cake" id="cake">
+        <div class="candles"></div>
+        <div class="tier t1"></div><div class="tier t2">&#10084;</div>
+        <div class="plate"></div>
+      </div>
+      <button class="gbtn" id="wishBtn">Make a wish</button>
+      <p class="wish" id="wishMsg"></p>
+    </div>
+    <div id="bPhotos"></div>
+    <div class="bvideos reveal"><h3>Our Favourite Videos</h3><div id="bVideos" class="vgrid"></div></div>
+    <div class="letter reveal" id="letter"></div>
+  </div>
+</section>
+
+<canvas id="confetti"></canvas>
+<div class="modal" id="lightbox">
+  <button class="x" data-close aria-label="Close">&times;</button>
+  <button class="nav prev" aria-label="Previous">&#8249;</button>
+  <figure><img alt=""><figcaption></figcaption></figure>
+  <button class="nav next" aria-label="Next">&#8250;</button>
+</div>
+<div class="modal" id="videoModal">
+  <button class="x" data-close aria-label="Close">&times;</button>
+  <figure><video controls playsinline></video><p class="vmiss">Add your video file to assets/videos/ and update script.js.</p><figcaption></figcaption></figure>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
