@@ -3,13 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Google</title>
+<title>Google · Sanuja Gaurav Randive</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- HOME: looks like a normal Google homepage -->
 <section id="home" class="view active">
+  <div class="home-top-bar">
+    <a href="javascript:void(0)" id="homeImagesBtn" class="top-bar-link">Images</a>
+    <span class="g-apps-ico" title="Google apps">
+      <svg viewBox="0 0 24 24"><path d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM6 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 12c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+    </span>
+    <span class="g-avatar-circle" title="Google Account">S</span>
+  </div>
   <div class="home-wrap">
     <h1 class="logo big"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h1>
     <form class="searchbox" autocomplete="off">
@@ -25,7 +32,7 @@
   </div>
 </section>
 
-<!-- RESULTS: floral themed -->
+<!-- RESULTS: Google Search & Google Images themed -->
 <section id="results" class="view">
   <header class="rhead">
     <h1 class="logo small" id="homeLink"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></h1>
@@ -34,6 +41,7 @@
       <button type="button" class="clear" aria-label="Clear">&times;</button>
       <span class="sep"></span>
       <svg class="ico" viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.9V21h2v-3.1A7 7 0 0 0 19 11h-2z"/></svg>
+      <svg class="ico lens" title="Search by image" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M9 3L7.17 5H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2h-3.17L15 3H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg>
       <svg class="ico find" viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
       <ul class="suggest"></ul>
     </form>
@@ -41,10 +49,345 @@
   <nav class="tabs" id="tabs">
     <button data-tab="all" class="on">All</button>
     <button data-tab="images">Images</button>
-    <button data-tab="videos">Videos</button>
-    <button data-tab="news">News</button>
   </nav>
-  <main id="tabContent"></main>
+  <main id="tabContent">
+    <!-- ALL TAB PANE -->
+    <div id="tabAll" class="tab-pane active"></div>
+
+    <!-- IMAGES SECTION (Google Images) -->
+    <section id="imagesSection" class="tab-pane images-section google-images-view">
+      <!-- Google Images Filter Chips -->
+      <div class="g-chips-bar" id="gChipsBar">
+        <button type="button" class="g-chip active" data-filter="all">
+          <svg class="g-chip-ico" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          All Images
+        </button>
+        <button type="button" class="g-chip" data-filter="queen">👑 Birthday Queen</button>
+        <button type="button" class="g-chip" data-filter="moments">✨ Memories</button>
+        <button type="button" class="g-chip" data-filter="together">🌸 Together</button>
+        <button type="button" class="g-chip" data-filter="special">💖 Special Moments</button>
+      </div>
+
+      <!-- Google Images Result Metadata -->
+      <div class="g-img-stats">
+        <span>About 28 results (0.32 seconds)</span>
+      </div>
+
+      <!-- Google Images Gallery Grid (28 Images - No Captions) -->
+      <div class="gallery google-gallery" id="googleGallery">
+      <figure class="g-img-card" data-i="0" data-group="queen">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.32 PM.jpeg" alt="Photo 1" loading="lazy" data-i="0">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="1" data-group="queen">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.32 PM (1).jpeg" alt="Photo 2" loading="lazy" data-i="1">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="2" data-group="queen">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.32 PM (2).jpeg" alt="Photo 3" loading="lazy" data-i="2">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="3" data-group="queen">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.33 PM.jpeg" alt="Photo 4" loading="lazy" data-i="3">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="4" data-group="queen">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.33 PM (1).jpeg" alt="Photo 5" loading="lazy" data-i="4">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="5" data-group="queen">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.33 PM (2).jpeg" alt="Photo 6" loading="lazy" data-i="5">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="6" data-group="queen">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.34 PM.jpeg" alt="Photo 7" loading="lazy" data-i="6">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="7" data-group="moments">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.34 PM (1).jpeg" alt="Photo 8" loading="lazy" data-i="7">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="8" data-group="moments">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.34 PM (2).jpeg" alt="Photo 9" loading="lazy" data-i="8">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="9" data-group="moments">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.35 PM.jpeg" alt="Photo 10" loading="lazy" data-i="9">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="10" data-group="moments">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.35 PM (1).jpeg" alt="Photo 11" loading="lazy" data-i="10">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="11" data-group="moments">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.37 PM.jpeg" alt="Photo 12" loading="lazy" data-i="11">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="12" data-group="moments">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.37 PM (1).jpeg" alt="Photo 13" loading="lazy" data-i="12">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="13" data-group="together">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.38 PM.jpeg" alt="Photo 14" loading="lazy" data-i="13">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="14" data-group="together">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.38 PM (1).jpeg" alt="Photo 15" loading="lazy" data-i="14">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="15" data-group="together">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.38 PM (2).jpeg" alt="Photo 16" loading="lazy" data-i="15">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="16" data-group="together">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.38 PM (3).jpeg" alt="Photo 17" loading="lazy" data-i="16">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="17" data-group="together">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.39 PM.jpeg" alt="Photo 18" loading="lazy" data-i="17">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="18" data-group="together">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.39 PM (1).jpeg" alt="Photo 19" loading="lazy" data-i="18">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="19" data-group="together">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.39 PM (2).jpeg" alt="Photo 20" loading="lazy" data-i="19">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="20" data-group="special">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.39 PM (3).jpeg" alt="Photo 21" loading="lazy" data-i="20">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="21" data-group="special">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.40 PM.jpeg" alt="Photo 22" loading="lazy" data-i="21">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="22" data-group="special">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.40 PM (1).jpeg" alt="Photo 23" loading="lazy" data-i="22">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="23" data-group="special">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.40 PM (2).jpeg" alt="Photo 24" loading="lazy" data-i="23">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="24" data-group="special">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.40 PM (3).jpeg" alt="Photo 25" loading="lazy" data-i="24">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="25" data-group="special">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.41 PM.jpeg" alt="Photo 26" loading="lazy" data-i="25">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="26" data-group="special">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.41 PM (1).jpeg" alt="Photo 27" loading="lazy" data-i="26">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      <figure class="g-img-card" data-i="27" data-group="special">
+        <div class="g-img-wrap">
+          <img src="images/WhatsApp Image 2026-10-14 at 10.29.41 PM (2).jpeg" alt="Photo 28" loading="lazy" data-i="27">
+        </div>
+        <div class="g-img-meta">
+          <span class="g-site-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          </span>
+          <span class="g-source-name">mummy.google.com</span>
+        </div>
+      </figure>
+      </div>
+    </section>
+
+
+  </main>
 </section>
 
 <!-- BIRTHDAY SURPRISE -->
@@ -66,22 +409,28 @@
       <p class="wish" id="wishMsg"></p>
     </div>
     <div id="bPhotos"></div>
-    <div class="bvideos reveal"><h3>Our Favourite Videos</h3><div id="bVideos" class="vgrid"></div></div>
     <div class="letter reveal" id="letter"></div>
   </div>
 </section>
 
 <canvas id="confetti"></canvas>
+
+<!-- LIGHTBOX MODAL (No Captions) -->
 <div class="modal" id="lightbox">
   <button class="x" data-close aria-label="Close">&times;</button>
   <button class="nav prev" aria-label="Previous">&#8249;</button>
-  <figure><img alt=""><figcaption></figcaption></figure>
+  <figure class="lightbox-figure">
+    <div class="lightbox-media">
+      <img alt="Mummy Photo" src="">
+    </div>
+    <div class="lightbox-meta">
+      <span class="lb-counter"></span>
+    </div>
+  </figure>
   <button class="nav next" aria-label="Next">&#8250;</button>
 </div>
-<div class="modal" id="videoModal">
-  <button class="x" data-close aria-label="Close">&times;</button>
-  <figure><video controls playsinline></video><p class="vmiss">Add your video file to assets/videos/ and update script.js.</p><figcaption></figcaption></figure>
-</div>
+
+
 
 <script src="script.js"></script>
 </body>
