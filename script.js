@@ -137,17 +137,16 @@ const results = [
   }
 ];
 
-// --- Birthday Note (Gen-Z, genuine, not overly emotional) ---
+// --- Birthday Note (From Anusha & Aarya) ---
 const message = {
-  title: "From Anusha & Aarya (Your Favorite Daughters)",
+  title: "Dear Mummyyy, ❤️🎂",
   paragraphs: [
-    "Happy Birthday, Mummy! 🎉",
-    "Since you are undeniably the main character today (and literally every other day tbh), we decided an ordinary birthday card simply would not cut it — so we built you an entire Google search engine just for you.",
-    "Thank you for being our daily inspiration, our biggest cheerleader, the household CEO, and the coolest mom ever. Everything you do for us is legendary.",
-    "10/10 mother, no notes, would definitely choose you as our mom again in every lifetime.",
-    "Have the most iconic birthday, eat lots of cake, and know that you are loved beyond words!"
+    "Happy Birthday to youuu! 🥳💗 We hope you have the best day ever, filled with lots of happiness, good food, cake, and all your favourite things. You deserve all the good things in life, and we hope this year brings you lots of new memories, fun moments, and everything you've been wishing for.",
+    "Thank you for always taking care of everything, handling our endless drama, and somehow managing to be right about almost everything 😂😭 Life at home would definitely be a lot more boring without you and your daily lectures! 🤭😂 We hope today you get to relax, enjoy yourself, and let everyone else do the work for a change.",
+    "May you always stay happy, healthy, and keep smiling the way you do. Keep being your amazing self, keep enjoying life! 👑💗",
+    "Once again, happiest birthday, Mummyyy! Enjoy your special day, eat lots of cake, and don't forget to save us some! 😭🎂 Love you loads! ❤️🫶🏻"
   ],
-  sign: "With all our love,<br>Anusha & Aarya ✨"
+  sign: "With lots of love,<br><br>Your favourite (and sometimes most annoying) daughters 😂<br>— Anusha & Aarya ❤️🫶🏻"
 };
 
 /* ====================== 2. SEARCH TRIGGERS ====================== */
